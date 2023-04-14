@@ -12,10 +12,6 @@ app.use(bodyParser.json()); //parse appilcation/json data
 app.use(urlencodedParser); //Check insert user.
 app.use(cors())
 
-app.use(function (req, res) {
-    console.log(req.url)
-})
-
 app.get('/',(req,res)=>{
     console.log(req)
     res.status(200).end()
