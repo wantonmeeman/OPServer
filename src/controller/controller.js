@@ -17,9 +17,9 @@ app.get('/', (req, res) => {
     res.status(200).end()
 })
 
-app.post('/', (req, res) => {
-    console.log(req)
-    res.status(200).end()
+app.post('/repeat/:string', (req, res) => {
+    console.log(req.params)
+    res.status(200).send(req.params.string)
 })
 
 app.put('/', (req, res) => {
