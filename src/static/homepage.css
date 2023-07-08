@@ -13,8 +13,13 @@
 }
 
 @keyframes orbit {
-    0%   { transform: rotate(-180deg); }
-    100% { transform: rotate(0deg);    }
+    0% {
+        transform: rotate(-180deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .box {
@@ -109,6 +114,7 @@ body {
 /*Sun Divide by 10 000*/
 /*Planet Divide by 2 000*/
 /*Distance Divide by 10 000 000*/
+/*Time Divide by day/12*/
 #sun {
     position: absolute;
     border: 1px solid #F4EACF;
@@ -122,15 +128,12 @@ body {
     top: 250.365px;
 }
 
-#mercury { 
+#mercury {
     /*Diameter 2.4345*/
     height: 2.4345px;
     width: 2.4345px;
-    left: 318.78275px;
-    top: 394.05755px;
-    
-    transition: transform 1s;
-    /*animation: orbit 1s linear infinite;*/
+    left:74.05755px;/*318.78275-244.7252*/
+    top:149.33235px;/*394.05755-244.7252*/
     /*transition: 0.1s; needs to be slighter more than a second else the math gets wonky*/
 }
 
@@ -139,5 +142,17 @@ body {
     height: 150.5496px;
     width: 150.5496px;
     left: 244.7252px;
+    top: 244.7252px;
+}
+
+#mercuryFulcrum {
+    position: absolute;
+    /*background-color: red;*/
+    border: .1px solid transparent;
+    height: 150.5496px;
+    width: 150.5496px;
+
+    animation: orbit 7.333333333s linear infinite;
+    left: 244.7252px; 
     top: 244.7252px;
 }
