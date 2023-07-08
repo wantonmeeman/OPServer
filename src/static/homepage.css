@@ -1,0 +1,133 @@
+@font-face {
+    font-family: Brandon-Grotesque;
+    src: url(/assets/fonts/BG/Brandon_reg.otf);
+}
+
+@font-face {
+    font-family: Cabin-Small;
+    src: url(/assets/fonts/Cabin/Cabin-Italic.ttf);
+}
+
+* {
+    font-family: Brandon-Grotesque, sans-serif;
+}
+
+.box {
+    display: flex;
+}
+
+body {
+    background-color: #35363A;
+}
+
+#topContentBox {
+    flex-direction: row;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+#introBox {
+    width: 45%;
+    margin-left: 7.5%;
+}
+
+#introSignatureBox {
+    margin-right: 7.5px;
+    align-items: start;
+}
+
+#introSignature {
+    margin-top: 8px;
+    height: 45px;
+    width: 60px;
+}
+
+#introTextBox {
+    flex-direction: column;
+}
+
+#introHey,
+#introDesc {
+    color: #949BA4;
+    font-size: 34px;
+    line-height: 48px;
+    font-weight: 100;
+}
+
+.emphasisText {
+    color: #F4EACF;
+    font-weight: 500;
+}
+
+#introSmall {
+    color: #949BA4;
+    margin-top: 14px;
+    font-family: Cabin-Small;
+    font-size: 15px;
+    line-height: 28px;
+}
+
+#animationBox {
+    position: relative;
+    display: block;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    flex: auto;
+}
+
+#solarSystem {
+    position: absolute;
+    margin: auto;
+    height: 640px;
+    width: 640px;
+    z-index: 1;
+    display: block;
+    background-color: grey;
+    transform: rotate(0deg);
+	transition: transform 0.7s linear
+}
+
+.planet{
+    position: absolute;
+    border: 1px solid #F4EACF;
+    border-radius: 1000px;
+    background-color: #35363A;
+}
+
+.planetTrail{
+    position: absolute;
+    border: .1px solid #F4EACF;
+    border-radius: 1000px;
+}
+
+/*Sun Divide by 10 000*/
+/*Planet Divide by 2 000*/
+/*Distance Divide by 10 000 000*/
+#sun {
+    /*Diameter 139.27*/
+    height: 139.27px;
+    width: 139.27px;
+    left: 250.365px;
+    top: 250.365px;
+}
+
+#mercury{
+    /*Diameter 2.4345*/
+    height: 2.4345px;
+    width: 2.4345px;
+    left: 318.78275px;
+    top: 394.05755px;
+	transform: rotate(0deg);
+	transition: transform 0.7s linear;
+}
+
+#mercuryTP{
+    /*Distance 5.6398*/
+    height:150.5496px;
+    width:150.5496px;
+    left:244.7252px;
+    top:244.7252px;
+}
