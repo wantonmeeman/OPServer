@@ -1,4 +1,4 @@
-var app = require('./src/api/controller/controller.js');
+var app = require('./controller.js');
 
 const PORT = 3000
 const IPADDR = '127.0.0.1'
