@@ -14,7 +14,7 @@
 
 @keyframes orbit {
     0% {
-        transform: rotate(-180deg);
+        transform: rotate(-360deg);
     }
 
     100% {
@@ -84,8 +84,9 @@ body {
     display: block;
     right: 0;
     bottom: 0;
-    height: 100%;
+    height: 125%;
     flex: auto;
+    margin-left:7.5%;
 }
 
 #solarSystem {
@@ -115,6 +116,22 @@ body {
 /*Planet Divide by 2 000*/
 /*Distance Divide by 10 000 000*/
 /*Time Divide by day/12*/
+
+/*Planet Top*/
+/*139.27 (Diameter of Sun) + (Distance of Planet) * 2 - (Diameter of Planet)/2 */
+/*Planet Left*/
+/*(139.27 (Diameter of Sun) + (Distance of Planet) * 2)/2 - (Diameter of Planet/2) */
+
+/*TP Height/Width*/
+/*139.27 (Diameter of Sun) + (Distance of Planet) * 2 */
+/*TP Left/Top*/
+/*320 (Width of Solar System/2) - 69.635 (Radius of Sun) - (Distance) */
+
+/*Fulcrum Height/Width*/
+/*139.27 (Diameter of Sun) + (Distance of Planet) * 2 */
+/*Fulcrum Left/Top*/
+/*320 (Width of Solar System/2) - 69.635 (Radius of Sun) - (Distance) */
+
 #sun {
     position: absolute;
     border: 1px solid #F4EACF;
@@ -129,16 +146,13 @@ body {
 }
 
 #mercury {
-    /*Diameter 2.4345*/
     height: 2.4345px;
     width: 2.4345px;
-    left:74.05755px;/*318.78275-244.7252*/
-    top:149.33235px;/*394.05755-244.7252*/
-    /*transition: 0.1s; needs to be slighter more than a second else the math gets wonky*/
+    left:74.05755px;
+    top:149.33235px;
 }
 
 #mercuryTP {
-    /*Distance 5.6398*/
     height: 150.5496px;
     width: 150.5496px;
     left: 244.7252px;
@@ -153,6 +167,200 @@ body {
     width: 150.5496px;
 
     animation: orbit 7.333333333s linear infinite;
+    -webkit-animation: orbit 7.333333333s linear infinite;
+
     left: 244.7252px; 
     top: 244.7252px;
 }
+
+#venus {
+    height: 6.0518px;
+    width: 6.0518px;
+    left:77.5031px;
+    top:158.0321px;
+}
+
+#venusTP {
+    height: 161.058px;
+    width: 161.058px;
+    left: 239.471px;
+    top: 239.471px;
+}
+
+#venusFulcrum {
+    position: absolute;
+    border: .1px solid transparent;
+    height: 161.058px;
+    width: 161.058px;
+
+    animation: orbit 18.75s linear infinite;
+    -webkit-animation: orbit 18.75s linear infinite;
+
+    left: 239.471px;
+    top: 239.471px;
+}
+
+#earth {
+    height: 6.371px;
+    width: 6.371px;
+    left:81.6095px;
+    top:166.4045px;
+}
+
+#earthTP {
+    height: 169.59px;
+    width: 169.59px;
+    left: 235.205px;
+    top: 235.205px;
+}
+
+#earthFulcrum {
+    position: absolute;
+    border: .1px solid transparent;
+    height: 169.59px;
+    width: 169.59px;
+
+    animation: orbit 30.4375s linear infinite;
+    -webkit-animation: orbit 30.4375s linear infinite;
+
+    left: 235.205px;
+    top: 235.205px;
+}
+
+#mars {
+    height: 3.3895px;
+    width: 3.3895px;
+    left:92.61625px;
+    top:186.92725px;
+}
+
+#marsTP {
+    height: 188.622px;
+    width: 188.622px;
+    left: 225.689px;
+    top: 225.689px;
+}
+
+#marsFulcrum {
+    position: absolute;
+    border: .1px solid transparent;
+    height: 188.622px;
+    width: 188.622px;
+
+    animation: orbit 57.244166666666665s linear infinite;
+    -webkit-animation: orbit 57.244166666666665s linear infinite;
+
+    left: 225.689px;
+    top: 225.689px;
+}
+
+#jupiter {
+    height: 71.4px;
+    width: 71.4px;
+    left:82.335px;
+    top:200.37px;
+}
+
+#jupiterTP {
+    height: 236.07px;
+    width: 236.07px;
+    left: 201.965px;
+    top: 201.965px;
+}
+
+#jupiterFulcrum {
+    position: absolute;
+    border: .1px solid transparent;
+    height: 236.07px;
+    width: 236.07px;
+
+    animation: orbit 361.0833333333333s linear infinite;
+    -webkit-animation: orbit 361.0833333333333s linear infinite;
+
+    left: 201.965px;
+    top: 201.965px;
+}
+
+#saturn {
+    height: 58.23px;
+    width: 58.23px;
+    left:186.62px;
+    top:402.355px;
+}
+
+#saturnTP {
+    height: 431.47px;
+    width: 431.47px;
+    left: 104.26500000000001px;
+    top: 104.26500000000001px;
+}
+
+#saturnFulcrum {
+    position: absolute;
+    border: .1px solid transparent;
+    height: 431.47px;
+    width: 431.47px;
+
+    animation: orbit 894.8625000000001s linear infinite;
+    -webkit-animation: orbit 894.8625000000001s linear infinite;
+
+    left: 104.26500000000001px;
+    top: 104.26500000000001px;
+}
+#uranus {
+    height: 25.362px;
+    width: 25.362px;
+    left:350.594px;
+    top:713.8689999999999px;
+}
+
+#uranusTP {
+    height: 726.55px;
+    width: 726.55px;
+    left: -43.27499999999998px;
+    top: -43.27499999999998px;
+}
+
+#uranusFulcrum {
+    position: absolute;
+    border: .1px solid transparent;
+    height: 726.55px;
+    width: 726.55px;
+
+    animation: orbit 2557.25s linear infinite;
+    -webkit-animation: orbit 2557.25s linear infinite;
+
+    left: -43.27499999999998px;
+    top: -43.27499999999998px;
+}
+
+#neptune {
+    height: 24.622px;
+    width: 24.622px;
+    left:504.614px;
+    top:1021.5389999999999px;
+}
+
+#neptuneTP {
+    height: 1033.85px;
+    width: 1033.85px;
+    left: -196.92499999999995px;
+    top: -196.92499999999995px;
+}
+
+#neptuneFulcrum {
+    position: absolute;
+    border: .1px solid transparent;
+    height: 1033.85px;
+    width: 1033.85px;
+
+    animation: orbit 5015.833333333333s linear infinite;
+    -webkit-animation: orbit 5015.833333333333s linear infinite;
+
+    left: -196.92499999999995px;
+    top: -196.92499999999995px;
+}
+
+
+
+
