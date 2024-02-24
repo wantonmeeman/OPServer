@@ -15,12 +15,14 @@ $(document).ready(function () {
 
         return $(this);
     };
-    /*Worker that handles the iteration of dates and animation prevents chrome 
-    throttling when focus is switched to another tab*/
-    const planetWorker = new Worker("../logic/planetWorker.js");
+
+    var tabFocused = true
+
+    var dayCount = 0
 
     var dayCounter = $("#dayCount")
     var yearCounter = $("#yearCount")
+    var startPerformance;
 
     var mercury = $("#mercuryFulcrum")
     var venus = $("#venusFulcrum")
@@ -40,15 +42,16 @@ $(document).ready(function () {
                 * dateTime) /*How long a day takes*/)
     }
 
-    var iterateDay = function (dayCount) {
+    $(window).on('focus', function () { tabFocused = true });
 
-        //Chrome throttling bypass
-        //https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+    $(window).on('blur', function () { tabFocused = false });
 
-        planetWorker.postMessage(dayCount)
+    var iterateDay = function () {
+        if (tabFocused) {
+            startPerformance = performance.now()
 
-        planetWorker.onmessage = (event) => {
-            dayCount = event.data
+            //Iterate a day
+            dayCount++
 
             yearCounter.text(Math.floor(dayCount / 365))
 
@@ -70,9 +73,9 @@ $(document).ready(function () {
                 console.log("Animate Planets")
             }
 
-            iterateDay(dayCount)
         }
+        setTimeout(iterateDay, dateTime - (performance.now() - startPerformance))
     }
 
-    iterateDay(0)
+    iterateDay()
 });
