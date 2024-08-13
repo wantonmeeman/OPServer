@@ -10,7 +10,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-app.use(express.static(__dirname));//This makes it so the root is /OPServer
+app.use(express.static(__dirname+"/frontEnd"));//This makes it so the root is /OPServer
 
 app.use(bodyParser.json()); //parse appilcation/json data
 app.use(urlencodedParser); //Check insert user.
@@ -18,13 +18,14 @@ app.use(cors())
 
 
 app.get('/home', (req, res) => {
+    console.log(__dirname)
     res.sendFile(
         //Doing this as express considers relative paths to be bad.
         //Resolve this by either the above 
         //path.resolve("../../static/homepage.html")
         //or specify the root path to parent directory
         //Starts from index.js
-        __dirname+"/assets/static/homepage.html"
+        __dirname+"/frontEnd/static/homepage.html"
     )
 })
 
