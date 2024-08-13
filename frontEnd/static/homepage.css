@@ -12,6 +12,9 @@
     font-family: Brandon-Grotesque, sans-serif;
 }
 
+html {
+    overflow-x: hidden;
+}
 
 .box {
     display: flex;
@@ -30,6 +33,7 @@ body {
 }
 
 #introBox {
+    margin-bottom: 15%;
     width: 45%;
     margin-left: 7.5%;
 }
@@ -70,12 +74,27 @@ body {
     line-height: 28px;
 }
 
+#socialsBarWrapper {
+    color: #949BA4;
+}
+
+.socialsLogo {
+    height: 30px;
+    width: 30px;
+}
+
+.socialLinkbox{
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+}
+
 #animationBox {
     position: relative;
     display: block;
     right: 0;
     bottom: 0;
-    height: 125%;
+    height: 100%;
     flex: auto;
     margin-left: 7.5%;
 }
